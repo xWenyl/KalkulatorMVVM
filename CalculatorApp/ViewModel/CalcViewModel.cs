@@ -1,14 +1,13 @@
 ﻿using CalculatorApp.Commands;
+using CalculatorApp.Model;
 using System;
-using System.ComponentModel;
+using System.Globalization;
+using System.Windows.Input;
 
 namespace CalculatorApp.ViewModel
 {
-    using Model;
-    using System.Globalization;
-    using System.Windows.Input;
 
-    public class CalcViewModel : INotifyPropertyChanged
+    public class CalcViewModel : ObservedObject
     {
         public CalcModel model = new CalcModel();
 
@@ -113,13 +112,6 @@ namespace CalculatorApp.ViewModel
         private void OnDisplayValueChanged(object obj)
         {
             onPropertyChanged(nameof(Display));
-        }
-
-        public event PropertyChangedEventHandler PropertyChanged;
-
-        private void onPropertyChanged(string nazwaWlasnosci)
-        {
-            if (PropertyChanged != null) PropertyChanged(this, new PropertyChangedEventArgs(nazwaWlasnosci));
         }
     }
 }
