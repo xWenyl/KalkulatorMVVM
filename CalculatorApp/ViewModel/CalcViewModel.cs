@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using CalculatorApp.Commands;
+using System;
 using System.ComponentModel;
-
 
 namespace CalculatorApp.ViewModel
 {
@@ -32,27 +28,7 @@ namespace CalculatorApp.ViewModel
 
         #region Commands
 
-
-        private ICommand addNum = null;
-        public ICommand AddNum
-        {
-            get
-            {
-                if (addNum == null) addNum = new RelayCommand(
-                    (object o) =>
-                    {
-                        model.AddNum(o);
-                        onPropertyChanged(nameof(Display));
-                    },
-                    (object o) =>
-                    {
-                        return ValidateComma(o);
-                    }
-                    );
-                return addNum;
-            }
-        }
-
+        public ICommand AddNum => new AddNumCommand(model, OnDisplayValueChanged);
 
         private ICommand selectOperation = null;
         public ICommand SelectOperation
@@ -89,8 +65,8 @@ namespace CalculatorApp.ViewModel
                     },
                     (object o) =>
                     {
-                        return !String.IsNullOrEmpty(model.firstOpperand) && 
-                        !String.IsNullOrEmpty(model.secondOperand) && 
+                        return !String.IsNullOrEmpty(model.firstOpperand) &&
+                        !String.IsNullOrEmpty(model.secondOperand) &&
                         double.TryParse(model.secondOperand, NumberStyles.Any, CultureInfo.InvariantCulture, out _);
                     }
                     );
@@ -134,16 +110,10 @@ namespace CalculatorApp.ViewModel
 
 
 
-        public bool ValidateComma(object o)
+        private void OnDisplayValueChanged(object obj)
         {
-            if (o as string == ".")
-            {
-                if (string.IsNullOrEmpty(model.operation)) return !model.firstOpperand.Contains(".");
-                else return !model.secondOperand.Contains(".");
-            }
-            else return true;
+            onPropertyChanged(nameof(Display));
         }
-
 
         public event PropertyChangedEventHandler PropertyChanged;
 
