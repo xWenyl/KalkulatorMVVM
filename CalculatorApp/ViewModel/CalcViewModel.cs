@@ -29,6 +29,7 @@ namespace CalculatorApp.ViewModel
 
         public ICommand AddNum => new AddNumCommand(model, OnDisplayValueChanged);
 
+        // TODO: Modify like AddNum
         private ICommand selectOperation = null;
         public ICommand SelectOperation
         {
@@ -50,7 +51,7 @@ namespace CalculatorApp.ViewModel
             }
         }
 
-
+        // TODO: Modify like AddNum
         private ICommand calculateResult = null;
         public ICommand CalculateResult
         {
@@ -73,7 +74,7 @@ namespace CalculatorApp.ViewModel
             }
         }
 
-
+        // TODO: Modify like AddNum
         private ICommand clearCalculator = null;
         public ICommand ClearCalculator
         {
@@ -90,7 +91,7 @@ namespace CalculatorApp.ViewModel
             }
         }
 
-
+        // TODO: Modify like AddNum
         public ICommand negateNumber = null;
         public ICommand NegateNumber
         {
