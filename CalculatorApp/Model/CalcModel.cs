@@ -100,7 +100,7 @@ namespace CalculatorApp.Model
             result = 0;
         }
 
-        public void NegateNumber()
+        public void ReverseNumberSign()
         {
             if (String.IsNullOrEmpty(operation))
             { 

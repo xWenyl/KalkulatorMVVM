@@ -30,24 +30,7 @@ namespace CalculatorApp.ViewModel
         public ICommand AddNum => new AddNumCommand(model, OnDisplayValueChanged);
         public ICommand SelectOperation => new SelectOperationCommand(model, OnDisplayValueChanged);
         public ICommand CalculateResult => new CalculateResultCommand(model, OnDisplayValueChanged);
-
-        // TODO: Modify like AddNum
-        private ICommand clearCalculator = null;
-        public ICommand ClearCalculator
-        {
-            get
-            {
-                if (clearCalculator == null) clearCalculator = new RelayCommand(
-                    (object o) =>
-                    {
-                        model.ClearCalculator();
-                        onPropertyChanged(nameof(Display));
-                    }
-                    );
-                return clearCalculator;
-            }
-        }
-
+        public ICommand ClearCalculator => new ClearCalculatorCommand(model, OnDisplayValueChanged);
         // TODO: Modify like AddNum
         public ICommand negateNumber = null;
         public ICommand NegateNumber
@@ -57,7 +40,7 @@ namespace CalculatorApp.ViewModel
                 if (negateNumber == null) negateNumber = new RelayCommand(
                     (object o) =>
                     {
-                        model.NegateNumber();
+                        model.ReverseNumberSign();
                         onPropertyChanged(nameof(Display));
                     });
                 return negateNumber;
