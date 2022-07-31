@@ -28,28 +28,31 @@ namespace CalculatorApp.ViewModel
         #region Commands
 
         public ICommand AddNum => new AddNumCommand(model, OnDisplayValueChanged);
+        public ICommand SelectOperation => new SelectOperationCommand(model, OnDisplayValueChanged);
+
 
         // TODO: Modify like AddNum
-        private ICommand selectOperation = null;
-        public ICommand SelectOperation
-        {
-            get
-            {
-                if (selectOperation == null) selectOperation = new RelayCommand(
-                    (object o) =>
+        /*        private ICommand selectOperation = null;
+                public ICommand SelectOperation
+                {
+                    get
                     {
-                        model.SelectOperation(o);
-                        onPropertyChanged(nameof(Display));
-                    },
-                    (object o) =>
-                    {
-                        bool validate = String.IsNullOrEmpty(model.firstOpperand) || Double.IsInfinity(model.result);
-                        return !validate;
+                        if (selectOperation == null) selectOperation = new RelayCommand(
+                            (object o) =>
+                            {
+                                model.SelectOperation(o);
+                                onPropertyChanged(nameof(Display));
+                            },
+                            (object o) =>
+                            {
+                                bool validate = String.IsNullOrEmpty(model.firstOpperand) || Double.IsInfinity(model.result);
+                                return !validate;
+                            }
+                            );
+                        return selectOperation;
                     }
-                    );
-                return selectOperation;
-            }
-        }
+                }
+        */
 
         // TODO: Modify like AddNum
         private ICommand calculateResult = null;
