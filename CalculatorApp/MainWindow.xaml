@@ -86,7 +86,7 @@
         <Button Grid.Row="4" Grid.Column="0" Content="1" Command="{Binding AddNum}" CommandParameter="1"/>
         <Button Grid.Row="4" Grid.Column="1" Content="2" Command="{Binding AddNum}" CommandParameter="2"/>
         <Button Grid.Row="4" Grid.Column="2" Content="3" Command="{Binding AddNum}" CommandParameter="3"/>
-        <Button Grid.Row="5" Grid.Column="0" Content="+/-" Command="{Binding NegateNumber}"/>
+        <Button Grid.Row="5" Grid.Column="0" Content="+/-" Command="{Binding ReverseNumberSign}"/>
 
         <Button Grid.Row="5" Grid.Column="1" Content="0" Command="{Binding AddNum}" CommandParameter="0"/>
         <Button Grid.Row="5" Grid.Column="2" Content="." Command="{Binding AddNum}" CommandParameter="."/>

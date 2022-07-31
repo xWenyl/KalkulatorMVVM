@@ -31,21 +31,7 @@ namespace CalculatorApp.ViewModel
         public ICommand SelectOperation => new SelectOperationCommand(model, OnDisplayValueChanged);
         public ICommand CalculateResult => new CalculateResultCommand(model, OnDisplayValueChanged);
         public ICommand ClearCalculator => new ClearCalculatorCommand(model, OnDisplayValueChanged);
-        // TODO: Modify like AddNum
-        public ICommand negateNumber = null;
-        public ICommand NegateNumber
-        {
-            get
-            {
-                if (negateNumber == null) negateNumber = new RelayCommand(
-                    (object o) =>
-                    {
-                        model.ReverseNumberSign();
-                        onPropertyChanged(nameof(Display));
-                    });
-                return negateNumber;
-            }
-        }
+        public ICommand ReverseNumberSign => new ReverseNumberSignCommand(model, OnDisplayValueChanged);
         #endregion
 
 
