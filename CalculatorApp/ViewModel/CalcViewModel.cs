@@ -29,53 +29,7 @@ namespace CalculatorApp.ViewModel
 
         public ICommand AddNum => new AddNumCommand(model, OnDisplayValueChanged);
         public ICommand SelectOperation => new SelectOperationCommand(model, OnDisplayValueChanged);
-
-
-        // TODO: Modify like AddNum
-        /*        private ICommand selectOperation = null;
-                public ICommand SelectOperation
-                {
-                    get
-                    {
-                        if (selectOperation == null) selectOperation = new RelayCommand(
-                            (object o) =>
-                            {
-                                model.SelectOperation(o);
-                                onPropertyChanged(nameof(Display));
-                            },
-                            (object o) =>
-                            {
-                                bool validate = String.IsNullOrEmpty(model.firstOpperand) || Double.IsInfinity(model.result);
-                                return !validate;
-                            }
-                            );
-                        return selectOperation;
-                    }
-                }
-        */
-
-        // TODO: Modify like AddNum
-        private ICommand calculateResult = null;
-        public ICommand CalculateResult
-        {
-            get
-            {
-                if (calculateResult == null) calculateResult = new RelayCommand(
-                    (object o) =>
-                    {
-                        model.CalculateResult();
-                        onPropertyChanged(nameof(Display));
-                    },
-                    (object o) =>
-                    {
-                        return !String.IsNullOrEmpty(model.firstOpperand) &&
-                        !String.IsNullOrEmpty(model.secondOperand) &&
-                        double.TryParse(model.secondOperand, NumberStyles.Any, CultureInfo.InvariantCulture, out _);
-                    }
-                    );
-                return calculateResult;
-            }
-        }
+        public ICommand CalculateResult => new CalculateResultCommand(model, OnDisplayValueChanged);
 
         // TODO: Modify like AddNum
         private ICommand clearCalculator = null;
