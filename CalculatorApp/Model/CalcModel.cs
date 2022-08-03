@@ -11,7 +11,7 @@ namespace CalculatorApp.Model
         public double result = 0;
         public string display;
 
-
+        
         public void AddNum(object o)
         {
 

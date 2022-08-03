@@ -66,7 +66,7 @@
             <RowDefinition/>
             <RowDefinition/>
         </Grid.RowDefinitions>
-        
+
         <TextBlock
             x:Name="Output"
             Grid.ColumnSpan="4"
@@ -76,26 +76,26 @@
             FontSize="40"
             Margin="0 0 20 0"
             Foreground="White"/>
-        <Button Grid.Row="1"  Grid.ColumnSpan="3" Content="C" Command="{Binding ClearCalculator}"/>
-        <Button Grid.Row="2" Content="7" Command="{Binding AddNum}" CommandParameter="7"/>
-        <Button Grid.Row="2" Grid.Column="1" Content="8" Command="{Binding AddNum}" CommandParameter="8"/>
-        <Button Grid.Row="2" Grid.Column="2" Content="9" Command="{Binding AddNum}" CommandParameter="9"/>
-        <Button Grid.Row="3" Grid.Column="0" Content="4" Command="{Binding AddNum}" CommandParameter="4"/>
-        <Button Grid.Row="3" Grid.Column="1" Content="5" Command="{Binding AddNum}" CommandParameter="5"/>
-        <Button Grid.Row="3" Grid.Column="2" Content="6" Command="{Binding AddNum}" CommandParameter="6"/>
-        <Button Grid.Row="4" Grid.Column="0" Content="1" Command="{Binding AddNum}" CommandParameter="1"/>
-        <Button Grid.Row="4" Grid.Column="1" Content="2" Command="{Binding AddNum}" CommandParameter="2"/>
-        <Button Grid.Row="4" Grid.Column="2" Content="3" Command="{Binding AddNum}" CommandParameter="3"/>
-        <Button Grid.Row="5" Grid.Column="0" Content="+/-" Command="{Binding ReverseNumberSign}"/>
+        <Button Grid.Row="1" x:Name="Clear" Grid.ColumnSpan="3" Content="C" Command="{Binding ClearCalculator}"/>
+        <Button Grid.Row="2" x:Name="Seven" Content="7" Command="{Binding AddNum}" CommandParameter="7"/>
+        <Button Grid.Row="2" Grid.Column="1" x:Name="Eight" Content="8" Command="{Binding AddNum}" CommandParameter="8"/>
+        <Button Grid.Row="2" Grid.Column="2" x:Name="Nine" Content="9" Command="{Binding AddNum}" CommandParameter="9"/>
+        <Button Grid.Row="3" Grid.Column="0" x:Name="Four" Content="4" Command="{Binding AddNum}" CommandParameter="4"/>
+        <Button Grid.Row="3" Grid.Column="1" x:Name="Five" Content="5" Command="{Binding AddNum}" CommandParameter="5"/>
+        <Button Grid.Row="3" Grid.Column="2" x:Name="Six" Content="6" Command="{Binding AddNum}" CommandParameter="6"/>
+        <Button Grid.Row="4" Grid.Column="0" x:Name="One" Content="1" Command="{Binding AddNum}" CommandParameter="1"/>
+        <Button Grid.Row="4" Grid.Column="1" x:Name="Two" Content="2" Command="{Binding AddNum}" CommandParameter="2"/>
+        <Button Grid.Row="4" Grid.Column="2" x:Name="Three" Content="3" Command="{Binding AddNum}" CommandParameter="3"/>
+        <Button Grid.Row="5" Grid.Column="0" x:Name="ReverseSign" Content="+/-" Command="{Binding ReverseNumberSign}"/>
 
-        <Button Grid.Row="5" Grid.Column="1" Content="0" Command="{Binding AddNum}" CommandParameter="0"/>
-        <Button Grid.Row="5" Grid.Column="2" Content="." Command="{Binding AddNum}" CommandParameter="."/>
-        <Button Grid.Row="5" Grid.Column="3" Content="=" Command="{Binding CalculateResult}"/>
+        <Button Grid.Row="5" Grid.Column="1" x:Name="Zero" Content="0" Command="{Binding AddNum}" CommandParameter="0"/>
+        <Button Grid.Row="5" Grid.Column="2" x:Name="Decimal" Content="." Command="{Binding AddNum}" CommandParameter="."/>
+        <Button Grid.Row="5" Grid.Column="3" x:Name="Equals" Content="=" Command="{Binding CalculateResult}"/>
 
-        <Button Grid.Row="4" Grid.Column="3" Content="+" Command="{Binding SelectOperation}" CommandParameter="+"/>
-        <Button Grid.Row="3" Grid.Column="3" Content="-" Command="{Binding SelectOperation}" CommandParameter="-"/>
-        <Button Grid.Row="2" Grid.Column="3" Content="*" Command="{Binding SelectOperation}" CommandParameter="*"/>
-        <Button Grid.Row="1" Grid.Column="3" Content="/" Command="{Binding SelectOperation}" CommandParameter="/"/>
+        <Button Grid.Row="4" Grid.Column="3" x:Name="Add" Content="+" Command="{Binding SelectOperation}" CommandParameter="+"/>
+        <Button Grid.Row="3" Grid.Column="3" x:Name="Substract" Content="-" Command="{Binding SelectOperation}" CommandParameter="-"/>
+        <Button Grid.Row="2" Grid.Column="3" x:Name="Multiply" Content="*" Command="{Binding SelectOperation}" CommandParameter="*"/>
+        <Button Grid.Row="1" Grid.Column="3" x:Name="Divide" Content="/" Command="{Binding SelectOperation}" CommandParameter="/"/>
 
     </Grid>
 </Window>
