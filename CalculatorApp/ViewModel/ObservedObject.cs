@@ -17,6 +17,7 @@ namespace CalculatorApp.ViewModel
             onPropertyChanged(new[] { propertyName });
         }
 
+
         protected void onPropertyChanged(params string[] propertyNames)
         {
             if (PropertyChanged != null)
